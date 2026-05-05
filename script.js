@@ -148,10 +148,9 @@ spinBtn.addEventListener('click', () => {
         const winner = CONFIG.gifts[winnerIndex];
         let displayName = winner.name;
 
-        // If the name is a link, wrap it in an anchor tag
-        if (winner.name.startsWith('http')) {
-            displayName = `<a href="${winner.name}" target="_blank" rel="noopener noreferrer">${winner.name}</a>`;
-        }
+        // If the name contains a link, wrap it in an anchor tag
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
+        displayName = displayName.replace(urlRegex, url => `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`);
 
         resultMsg.innerHTML = `You won: <span>${winningEmoji} ${displayName}</span>!`;
         resultMsg.style.transform = 'scale(1.2)';

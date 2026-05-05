@@ -294,6 +294,8 @@ body {
     color: #ff758c;
     text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 #result-message a {
